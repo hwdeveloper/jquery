@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>组选择器</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("button").click(function(){
+                $("h2,#wrap,span.red,[title='text']").css("color","red");
+            });
+        });
+    </script>
+</head>
+<body>
+
+<h2 class="test">这是一个标题</h2>
+<p id="wrap">这是一个段落。</p>
+<span class="red">span标签</span>
+<p title="text">这是一个段落。</p>
+<button>点我</button>
+</body>
+</html>

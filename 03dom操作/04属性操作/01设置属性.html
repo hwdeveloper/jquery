@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" >
+        $(function(){
+            $("input[checked='checked']").prop({
+                disabled: true
+            });
+        })
+    </script>
+
+    <title>01设置属性</title>
+</head>
+<body>
+<input type="checkbox" checked="checked" />
+<input type="checkbox" />
+<input type="checkbox" />
+<input type="checkbox"  checked="checked" />
+</body>
+</html>
