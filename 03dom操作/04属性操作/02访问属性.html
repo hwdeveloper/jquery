@@ -7,7 +7,7 @@
 $(function(){
 	$("input").change(function(){
 		var $input = $(this);
-		$("p").html($input.attr('checked') );
+		$("p").html($input.prop('checked') );
 	}).change();
 })
 </script>
