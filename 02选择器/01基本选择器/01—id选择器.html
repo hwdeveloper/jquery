@@ -5,9 +5,18 @@
     <title>id选择器</title>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script>
+
+        var isShow=true;
         $(document).ready(function(){
             $("button").click(function(){
-                $("#test").hide();
+                if(isShow){
+                    $("#test").hide();
+                    isShow=false;
+                }else{
+                    $("#test").show();
+                    isShow=true;
+                }
+
             });
         });
     </script>

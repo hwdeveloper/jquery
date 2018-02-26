@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .subBorder {
+            position: fixed;
+            left: 50%;
+            right: 50%;
+            width: 400px;
+            height: 200px;
+            margin: 0 auto;
+            background: #999999;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        #dialog form {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<input type="button" onclick="CheckAll();" value="全选" />
+<input type="button" onclick="CheckReverse();" value="反选" />
+<input type="button" onclick="CheckCancel();" value="取消" />
+
+<table  border="2">
+    <thead></thead>
+    <tbody id="tb1">
+    <tr>
+        <td><input type="checkbox" /></td>
+        <td>mysql-001</td>
+        <td>10.10.8.10</td>
+        <td>15379</td>
+    </tr>
+
+    <tr>
+        <td><input type="checkbox" /></td>
+        <td>redis-001</td>
+        <td>10.10.9.10</td>
+        <td>16379</td>
+    </tr>
+
+    <tr>
+        <td><input type="checkbox" /></td>
+        <td>monitor-001</td>
+        <td>10.10.10.10</td>
+        <td>17379</td>
+    </tr>
+    </tbody>
+
+</table>
+
+<div id="dialog" class="subBorder hide">
+    <form action="" method="get">
+        <p>主机名：<input type="text" id="hostname"/></p>
+        <p>ip地址：<input type="text" id="ip" /></p>
+        <p>端口号：<input type="text" id="port"/></p>
+        <input type="submit" onclick="return SubmitForm();" value="确认"/>
+        <input type="button" onclick="Cancel();" value="取消"/>
+    </form>
+
+</div>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+
+<script type="text/javascript">
+    //全选
+    function CheckAll(){
+        //$('#tb1').find(':checkbox').attr('checked','checked');
+        $('#tb1').find(':checkbox').prop('checked',true);
+    }
+
+    //反选
+
+    function CheckReverse(){
+        //找，如果选中，取消，位选中，则选中
+        $('#tb1').find(':checkbox').each(function(){
+            //$(this) 等于 每一个复选框
+            //$(this).prop() 如果选中，true，否则false
+            //attr 如果选中，checked，checked=checked
+            if($(this).prop('checked')){
+                $(this).prop('checked',false);
+            }else{
+                $(this).prop('checked',true);
+            }
+        });
+    }
+
+    function CheckCancel(){
+        //$('#tb1').find(':checkbox').removeAttr('checked'); <==>
+        $('#tb1').find(':checkbox').prop('checked',false);
+    }
+</script>
+
+</body>
+</html>

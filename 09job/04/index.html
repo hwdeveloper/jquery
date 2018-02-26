@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JQuery案例练习</title>
+    <style type="text/css">
+
+        /*清空所有的样式*/
+        *{
+            margin:0;
+            padding: 0;
+            border:0;
+            list-style:none;       /*去掉ul和ol中的样式*/
+        }
+        .all{
+            width: 800px;
+            height: 535px;
+            margin: 100px auto;
+            position: relative;     /*子绝父相*/
+            overflow: hidden;
+        }
+        .all ul{
+            position: relative;      /*子绝父相，它的子类通过绝对定位的方式让图片的原点和盒子的原点保持一致*/
+            z-index: 1;
+        }
+        /*通过定位的方式让图片的左上角位于盒子的左上角*/
+        .all ul li{
+            position: absolute;
+            left: 0;         /*用来确定图片的位置*/
+            top:0;
+        }
+        /*Z-index 仅能在定位元素上奏效(例如 position:absolute;)!说明该属性设置一个定位元素沿 z 轴的位置，
+         * z 轴定义为垂直延伸到显示区的轴。如果为正数，则离用户更近，为负数则表示离用户更远。
+        */
+        .all ol{
+            position: absolute;   /*标准流中同级的ol和ul只能按顺序显示，不能让ol显示在ul之上，所以采用定位的方式*/
+            z-index: 2;           /*2>1,让ol显示在ul之上*/
+            right: 20px;
+            bottom: 10px;
+        }
+        .all ol li{
+            width: 20px;
+            height: 20px;
+            background-color: #333;
+            border: 1px solid #cccccc;
+            font-weight: bold;
+            text-align: center;       /*水平居中*/
+            line-height: 20px;           /*垂直居中*/
+            float: left;          /*让所有ol里面的li水平显示*/
+            margin-left: 10px;       /*li与li之间有一定的间距*/
+            color: #cccccc;        /*字体的颜色*/
+            margin-top: 10px;    /*解决current的方块变大后，其他的色块位置相对上移的问题*/
+            cursor: pointer;          /*鼠标移动到上面显示小手*/
+        }
+        .all ol .current{
+            width: 30px;
+            height: 30px;
+            color: #f60;      /* 字体的颜色*/
+            border: 1px solid #ff6600;
+            line-height: 30px;
+            margin-top: 0;         /*当前的色块的margin-top为0，之前的为10，因为当前的色块比之前的大了10px*/
+
+        }
+
+    </style>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+    <script type="text/javascript">
+        $(function(){
+            var num2=6;
+            //第一步，通过$符代码分离
+            $('ol li').mouseover(function(e){      //当鼠标移动到ol里面的li的时候，执行操作
+                $(this).attr('class','current');       //当前的li它的类变为current,也就是样式发生变化
+                $(this).siblings().attr('class','');       //当前li的兄弟li的类置空
+
+                var num=$(this).index()      //获取到当前的ol li的index值
+                //因为让图片从右边过来，所以一开始先让它位于当前图片的右侧，也就是left值=图片的width
+                $('ul li').eq(num).css('left','800px');
+                num2++
+                $('ul li').eq(num).css('z-index',num2);   //注意此处的num2是参数，不需要加''
+                $('ul li').eq(num).animate({left:'0'},500);
+            });
+        })
+    </script>
+</head>
+<body>
+<div class="all">
+    <ul >
+        <li><img src="images/01.jpg"></li>
+        <li><img src="images/02.jpg"></li>
+        <li><img src="images/03.jpg"></li>
+        <li><img src="images/04.jpg"></li>
+        <li><img src="images/05.jpg"></li>
+    </ul>
+    <ol>
+        <!--里面记得写数字，不然就只有空的方块了-->
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li class="current">5</li>
+    </ol>
+</div>
+</body>
+</html>
