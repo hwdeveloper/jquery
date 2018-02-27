@@ -55,16 +55,6 @@
 
 </table>
 
-<div id="dialog" class="subBorder hide">
-    <form action="" method="get">
-        <p>主机名：<input type="text" id="hostname"/></p>
-        <p>ip地址：<input type="text" id="ip" /></p>
-        <p>端口号：<input type="text" id="port"/></p>
-        <input type="submit" onclick="return SubmitForm();" value="确认"/>
-        <input type="button" onclick="Cancel();" value="取消"/>
-    </form>
-
-</div>
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
@@ -72,7 +62,8 @@
 <script type="text/javascript">
     //全选
     function CheckAll(){
-        //$('#tb1').find(':checkbox').attr('checked','checked');
+        //1,find,元素后代的全部元素
+        //:checkbox 选择器选取类型为 checkbox 的 <input> 元素
         $('#tb1').find(':checkbox').prop('checked',true);
     }
 
