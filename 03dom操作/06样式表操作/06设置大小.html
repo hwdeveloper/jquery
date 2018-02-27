@@ -2,19 +2,20 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<script src="../../jQuery/jquery-1.6.4.js" type="text/javascript"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script type="text/javascript" >
 $(function(){
-    $("div").html("height（原）=" + $("div").height() + "<br />width（原）=" + $("div").width());	//获取元素设置前的宽和高
-    $("div").height(140);	//重设元素高度为140px
-    $("div").width("30em");	//重设元素宽度为30em
-    $("div").html( $("div").html() + "<br />height（现）=" + $("div").height() + "<br />width（现）=" + $("div").width());	//获取元素设置前的宽和高
+    var $div = $("div");
+    $div.html("height（原）=" + $div.height() + "<br />width（原）=" + $div.width());	//获取元素设置前的宽和高
+    $div.height(140);	//重设元素高度为140px
+    $div.width("30em");	//重设元素宽度为30em
+    $div.html( $div.html() + "<br />height（现）=" + $div.height() + "<br />width（现）=" +$div.width());	//获取元素设置前的宽和高
 })
 
 </script>
 <title>06设置大小</title>
 </head>
 <body>
-<div style="border:solid 10px red;">盒子</div>
+<div style="border:solid 1px red;">盒子</div>
 </body>
 </html>

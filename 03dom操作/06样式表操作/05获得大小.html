@@ -5,8 +5,9 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" >
         $(function(){
-            $("div").html("innerHeight=" + $("div").innerHeight() + "<br />innerWidth=" + $("div").innerWidth());
-            $("div").html( $("div").html() + "<br />outerHeight=" + $("div").outerHeight() + "<br />outerWidth=" + $("div").outerWidth());
+            var $div =  $("div");
+            $div.html("innerHeight=" + $div.innerHeight() + "<br />innerWidth=" + $div.innerWidth());
+            $div.html( $div.html() + "<br />outerHeight=" + $div.outerHeight() + "<br />outerWidth=" + $div.outerWidth());
         })
     </script>
 
