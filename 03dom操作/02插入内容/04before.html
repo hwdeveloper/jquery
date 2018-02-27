@@ -5,17 +5,23 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" >
 $(function(){ 
-    $("li img").before($("<span>小图标：</span>"));
+    $("ul .img1").before('<li><img src="../../images/03.jpg" /></li>');
 })
 
 </script>
+    <style type="text/css">
+        img{
+            width: 100px;
+            height: 100px;
+        }
+    </style>
 <title>04before</title>
 </head>
 <body>
 <h2>图标列表</h2>
 <ul class="container">
-    <li><img src="images/icon (1).png" /></li>
-    <li><img src="images/icon (2).png" /></li>
+    <li><img class="img1" src="../../images/01.jpg" /></li>
+    <li><img src="../../images/02.jpg" /></li>
 </ul>
 
 </body>

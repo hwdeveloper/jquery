@@ -5,9 +5,16 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" >
            $(function(){
-               $("li #img1").after($("<span>新元素</span>"));
+               $("li #img1").after($(" <li><span>新元素</span> </li>"));
            })
 </script>
+
+    <style type="text/css">
+        img{
+            width: 200px;
+            height: 200px;
+        }
+    </style>
 <title>03after</title>
 </head>
 <body>
