@@ -8,10 +8,12 @@ $(function(){
     var $arr1 = $("#u1 li");
     var $arr2 = $(".red");
     var $arr3 = jQuery.merge($arr1, $arr2);
+
+
     var $arr4 =  jQuery.unique($arr3);
-    alert($arr1.length);    //·µ»Ø3
-    alert($arr3.length);     //·µ»Ø3
-    alert($arr4.length);     //·µ»Ø3
+
+    console.log($arr3);
+    console.log($arr4);
 })
 
 
@@ -22,6 +24,8 @@ $(function(){
 <body>
 <ul id="u1">
     <li>1</li>
+    <li>2</li>
+    <li>2</li>
     <li>2</li>
     <li class="red">3</li>
 </ul>
