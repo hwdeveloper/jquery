@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+             var array1=[{name:'小林',score:59},{name:'小强',score:78}];
+
+             var array2=[{name:'小明',score:88},{name:'小刚',score:99}];
+
+
+             var array3 = jQuery.merge(array1,array2);
+
+             console.log(array3);
+
+        });
+
+    </script>
+
+</head>
+<body>
+
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+</ul>
+
+
+</body>
+</html>

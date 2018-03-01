@@ -33,11 +33,8 @@
             $('li').mouseover(function(e){
                 //当鼠标移到某一个li的时候，该li的兄弟li的透明度降低
                 $(this).siblings().stop().fadeTo(500,0.3);  //透明度在500m内淡入到0.3
-            });
-//            当鼠标移后，该li(this)的兄弟li的透明度恢复默认
-            $('li').mouseout(function(e){
-                //用stop()解决JQuery的排队问题，也就是鼠标快速的乱滑之后移开，状态不会持续的进行
-                $(this).siblings().stop().fadeTo(500,1);   //透明度恢复到默认值1
+                $(this).fadeTo(500,1);   //透明度恢复到默认值1
+
             });
         })
     </script>
