@@ -45,25 +45,29 @@
         $(function(){
             var x =10;
             var y = 20;
+            //1,鼠标移入a标签
             $("a.tooltip").mouseover(function(e){
+                //1,获得当前的标题
                 this.myTitle = this.title;
+                //2,图片标题置空
                 this.title="";
-                var imgTitle = this.myTitle?"<br/>"+this.myTitle:"";
-                //创建div元素
-                var tooltip = "<div id='tooltip'><img src='"+this.href+ "' alt='产品预览图'"+imgTitle+"</div>";
-                //添加到dom中
+                //3,创建div元素
+                var tooltip = "<div id='tooltip'> <img src='"+this.href+ "' />"+this.myTitle+"</div>";
+                //4,添加到dom中
                 $("body").append(tooltip);
-                //设置div的样式
+                //5,设置div的样式
                 $("#tooltip")
                     .css({
                         "top":(e.pageY+y)+"px",
                         "left":(e.pageX+x)+"px"
                     }).show("fast");
             }).mouseout(function(){
-                //如果在滑出时不将值重新赋给title属性，下次滑入时title的值就为空了
+                //1,滑动时设置图片的标题
                 this.title = this.myTitle;
+                //2,创建的视图清除
                 $("#tooltip").remove();
             }).mousemove(function(e){
+                //1，鼠标移动的时候，不断的改变创建视图的坐标
                 $("#tooltip")
                     .css({
                         "top":(e.pageY+y)+"px",
