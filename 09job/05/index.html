@@ -31,9 +31,10 @@
     <script type="text/javascript">
         $(function(){
             $('li').mouseover(function(e){
-                //当鼠标移到某一个li的时候，该li的兄弟li的透明度降低
+                //1，当鼠标移到某一个li的时候，该li的兄弟li的透明度降低
                 $(this).siblings().stop().fadeTo(500,0.3);  //透明度在500m内淡入到0.3
-                $(this).fadeTo(500,1);   //透明度恢复到默认值1
+                //2,当前的li的透明度恢复到默认值1
+                $(this).fadeTo(500,1);
 
             });
         })
