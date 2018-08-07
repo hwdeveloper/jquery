@@ -15,7 +15,8 @@
 
         $(function(){
             //1,创建table标签
-            var $table = $("<table></table>");
+            var $table = $("<table border='1px'></table>");
+
             //2,把标签添加到body
             $("body").append($table);
 
@@ -24,7 +25,7 @@
             for(var i=0;i<length;i++){
 
                 if(i==0){
-                    $table.append('<tr><td id="name'+i+'" style="width: 150px">'+singers[i].name+'<input id="button" type="button" value="三角形"/></td><td id="introduce'+i+'" style="width: 700px">'+singers[i].introduce+'</td></tr>');
+                    $table.append('<tr><td id="name'+i+'" style="width: 150px">'+singers[i].name+'<input id="button" type="button" value="隐藏"/></td><td id="introduce'+i+'" style="width: 700px">'+singers[i].introduce+'</td></tr>');
 
                 }else{
                     $table.append('<tr><td id="name'+i+'" style="width: 150px">'+singers[i].name+'</td><td id="introduce'+i+'" style="width: 700px">'+singers[i].introduce+'</td></tr>');
