@@ -3,19 +3,27 @@
 <head>
     <meta charset="utf-8">
     <title>02post</title>
-    <script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js">
-    </script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
     <script>
         $(document).ready(function(){
             $("button").click(function(){
+
+                var datas=[0,1,2,3,4,5];
                 var url ="http://localhost:8088/post";
-                $.post(url,{
-                        name:"king",
-                        age:18
+                $.ajax({
+                    url: url,
+                    type: "POST",
+                    data: {
+                        name: "king",
+                        age: 18,
+                        data: datas
                     },
-                    function(data,status){
-                       console.log(data);
-                    });
+                    traditional: true,//这里设置为true
+                    success: function(data) {
+                        console.log(data);
+                    }
+                });
             });
         });
     </script>
